@@ -10,6 +10,10 @@ li {
     list-style: none;
 }
 
+.btn {
+    cursor: pointer;
+}
+
 /*  fonts  */
 @font-face {
     font-family: "Parisienne-Regular";
@@ -151,14 +155,35 @@ li {
 .gd-id-card2 {
     background-image: url("../../images/dormitory/gd_card_form2.png");
 }
+
 .hf-id-card2 {
     background-image: url("../../images/dormitory/hf_card_form2.png");
 }
+
 .sth-id-card2 {
     background-image: url("../../images/dormitory/sth_card_form2.png");
 }
+
 .rc-id-card2 {
     background-image: url("../../images/dormitory/rc_card_form2.png");
+}
+
+
+/*  room  */
+.gd-room {
+    background-image: url("../../images/dormitory/gd_room.jpg");
+}
+
+.hf-room {
+    background-image: url("../../images/dormitory/hf_room.jpg");
+}
+
+.sth-room {
+    background-image: url("../../images/dormitory/sth_room.jpg");
+}
+
+.rc-room {
+    background-image: url("../../images/dormitory/rc_room.jpg");
 }
 
 
@@ -173,6 +198,30 @@ li {
 }
 
 
+/*  page-navigator  */
+.page-nav {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    position: fixed;
+    transform: translate(-50%);
+
+}
+
+.page-nav-next {
+    background-image: url("../../images/dormitory/next.png");
+    top: 50%;
+    left: 95%;
+}
+
+.page-nav-pre {
+    background-image: url("../../images/dormitory/previous.png");
+    top: 50%;
+    left: 5%;
+}
+
+
+/*  Dormitory sorting result page */
 /*  body  */
 .wrapper {
     margin-top: 6%;
@@ -184,11 +233,11 @@ li {
     flex-direction: row;
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
-    scroll-behavior:smooth;
+    scroll-behavior: smooth;
 }
 
 .scroll-wrap::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .element {
@@ -220,7 +269,7 @@ li {
     padding-bottom: 2%;
 }
 
-.go-room-btn{
+.go-room-btn {
     font-size: 16px;
     border: 1px solid white;
     border-radius: 50px;
@@ -254,24 +303,25 @@ li {
     background-position: center;
     width: 130px;
     height: 170px;
-    margin: 40% 25% 0 25%;
+    margin: 40% 25% 1% 25%;
 }
 
 .student-name {
     font-size: 20px;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 .id-card-info {
     font-size: 12px;
     text-align: left;
     line-height: 190%;
-    padding: 20px 35px;
+    padding: 8% 11% 5% 13%;
 }
 
 .id-card-dorm-logo {
     width: 130px;
-    height:200px;
+    height: 200px;
     margin: 15% 25% 0 25%;
 }
 
@@ -293,24 +343,101 @@ li {
 }
 
 
-/*  page-navigator  */
-.page-nav {
-    width: 50px;
-    height: 50px;
+/*  my room page */
+/*  body  */
+.myroom {
+    width: 1044px;
+    height: 708px;
+    padding-top: 3%;
+    margin: auto;
+}
+
+.bed-name {
+    font-size: 35px;
+    position: absolute;
+    top: 11%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bag {
+    background-image: url("../../images/dormitory/bag.png");
+    background-position: center;
     background-size: cover;
-    position: fixed;
-    transform: translate(-50%);
-
+    width: 140px;
+    height: 105px;
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s;
 }
 
-.page-nav-next {
-    background-image: url("../../images/dormitory/next.png");
-    top: 50%;
-    left: 95%;
+.bag:hover {
+    transform: scale(1.2) translateX(-60px);
 }
 
-.page-nav-pre {
-    background-image: url("../../images/dormitory/previous.png");
-    top: 50%;
-    left: 5%;
+.lounge-btn {
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 89%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+}
+
+.arrow-btn {
+    background-image: url("../../images/dormitory/arrow.png");
+    background-size: cover;
+    position: absolute;
+    top: 96%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 25px;
+}
+
+
+/*  modal - student ID card  */
+#modal.modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal .modal-window {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-style: none;
+    border-radius: 10px;
+    width: 630px;
+    height: 440px;
+    position: relative;
+    top: 3%;
+    padding: 10px;
+}
+
+#modal .close-area {
+    display: inline;
+    float: right;
+    padding-right: 10px;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px gray;
+    color: white;
+}
+
+#modal .content {
+    margin-top: 20px;
+    margin-left: 20px;
 }
