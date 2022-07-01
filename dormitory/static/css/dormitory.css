@@ -26,6 +26,11 @@ li {
     src: url("../fonts/IBMPlexSansKR-Light.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "Noto Sans KR Regular";
+    src: url("../fonts/NotoSansKR-Regular.otf") format("truetype");
+}
+
 .title-font {
     font-family: 'Parisienne-Regular', serif;
 }
@@ -36,6 +41,10 @@ li {
 
 .btn-font {
     font-family: 'IBM-light', serif;
+}
+
+.kr-font {
+    font-family: 'Noto Sans KR Regular', serif;
 }
 
 .xs-font {
@@ -70,86 +79,86 @@ li {
 }
 
 .gd-bg {
-    background-image: url("/images/dormitory/gd_bg.jpg");
+    background-image: url("../../images/dormitory/gd_bg.jpg");
 }
 
 .hf-bg {
-    background-image: url("/images/dormitory/hf_bg.jpg");
+    background-image: url("../../images/dormitory/hf_bg.jpg");
 }
 
 .sth-bg {
-    background-image: url("/images/dormitory/sth_bg.jpg");
+    background-image: url("../../images/dormitory/sth_bg.jpg");
 }
 
 .rc-bg {
-    background-image: url("/images/dormitory/rc_bg.jpg");
+    background-image: url("../../images/dormitory/rc_bg.jpg");
 }
 
 
 /*  logo  */
 .hogwarts-logo {
-    background-image: url("/images/hw_logo.png");
+    background-image: url("../../images/hw_logo.png");
 }
 
 .gd-logo {
-    background-image: url("/images/dormitory/gd_logo.png");
+    background-image: url("../../images/dormitory/gd_logo.png");
 }
 
 .hf-logo {
-    background-image: url("/images/dormitory/hf_logo.png");
+    background-image: url("../../images/dormitory/hf_logo.png");
 }
 
 .sth-logo {
-    background-image: url("/images/dormitory/sth_logo.png");
+    background-image: url("../../images/dormitory/sth_logo.png");
 }
 
 .rc-logo {
-    background-image: url("/images/dormitory/rc_logo.png");
+    background-image: url("../../images/dormitory/rc_logo.png");
 }
 
 
 /*  icon  */
 .facebook {
-    background-image: url("/images/dormitory/facebook.png");
+    background-image: url("../../images/dormitory/facebook.png");
 }
 
 .kakaotalk {
-    background-image: url("/images/dormitory/kakaotalk.png");
+    background-image: url("../../images/dormitory/kakaotalk.png");
 }
 
 .link_share {
-    background-image: url("/images/dormitory/link_share.png");
+    background-image: url("../../images/dormitory/link_share.png");
 }
 
 
 /*  id-card  */
 .gd-id-card {
-    background-image: url("/images/dormitory/gd_card_form.png");
+    background-image: url("../../images/dormitory/gd_card_form.png");
 }
 
 .hf-id-card {
-    background-image: url("/images/dormitory/hf_card_form.png");
+    background-image: url("../../images/dormitory/hf_card_form.png");
 }
 
 .sth-id-card {
-    background-image: url("/images/dormitory/sth_card_form.png");
+    background-image: url("../../images/dormitory/sth_card_form.png");
 }
 
 .rc-id-card {
-    background-image: url("/images/dormitory/rc_card_form.png");
+    background-image: url("../../images/dormitory/rc_card_form.png");
 }
 
 .gd-id-card2 {
-    background-image: url("/images/dormitory/gd_card_form2.png");
+    background-image: url("../../images/dormitory/gd_card_form2.png");
 }
 .hf-id-card2 {
-    background-image: url("/images/dormitory/hf_card_form2.png");
+    background-image: url("../../images/dormitory/hf_card_form2.png");
 }
 .sth-id-card2 {
-    background-image: url("/images/dormitory/sth_card_form2.png");
+    background-image: url("../../images/dormitory/sth_card_form2.png");
 }
 .rc-id-card2 {
-    background-image: url("/images/dormitory/rc_card_form2.png");
+    background-image: url("../../images/dormitory/rc_card_form2.png");
 }
 
 
@@ -201,16 +210,18 @@ li {
 }
 
 .dorm-name {
-    font-size: 5vh;
+    font-size: 70px;
+    font-weight: bold;
     padding-bottom: 2%;
 }
 
 .dorm-body {
-    font-size: 2vh;
+    font-size: 25px;
     padding-bottom: 2%;
 }
 
 .go-room-btn{
+    font-size: 16px;
     border: 1px solid white;
     border-radius: 50px;
     background-color: transparent;
@@ -238,7 +249,7 @@ li {
 }
 
 .portrait {
-    background-image: url("/images/luna.jpg");
+    background-image: url("../../images/luna.jpg");
     background-size: cover;
     background-position: center;
     width: 130px;
@@ -247,7 +258,8 @@ li {
 }
 
 .student-name {
-    font-size: 22px;
+    font-size: 20px;
+    letter-spacing: 1px;
 }
 
 .id-card-info {
@@ -292,13 +304,13 @@ li {
 }
 
 .page-nav-next {
-    background-image: url("/images/dormitory/next.png");
+    background-image: url("../../images/dormitory/next.png");
     top: 50%;
     left: 95%;
 }
 
 .page-nav-pre {
-    background-image: url("/images/dormitory/previous.png");
+    background-image: url("../../images/dormitory/previous.png");
     top: 50%;
     left: 5%;
 }
