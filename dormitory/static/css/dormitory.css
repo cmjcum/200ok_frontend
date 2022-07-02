@@ -352,14 +352,35 @@ li {
     margin: auto;
 }
 
+/*  bed-name location  */
 .bed-name {
     font-size: 35px;
     position: absolute;
-    top: 11%;
-    left: 50%;
     transform: translateX(-50%);
 }
 
+.gd-bed-name {
+    top: 19%;
+    left: 50%;
+}
+
+.hf-bed-name {
+    top: 32%;
+    left: 50%;
+}
+
+.sth-bed-name {
+    top: 21%;
+    left: 50%;
+}
+
+.rc-bed-name {
+    top: 11%;
+    left: 50%;
+}
+
+
+/*  bag location  */
 .bag {
     background-image: url("../../images/dormitory/bag.png");
     background-position: center;
@@ -367,10 +388,28 @@ li {
     width: 140px;
     height: 105px;
     position: absolute;
-    top: 62%;
-    left: 50%;
     transform: translateX(-50%);
     transition: 0.3s;
+}
+
+.gd-bag {
+    top: 73%;
+    left: 50%;
+}
+
+.hf-bag {
+    top: 74%;
+    left: 50%;
+}
+
+.sth-bag {
+    top: 70%;
+    left: 50%;
+}
+
+.rc-bag {
+    top: 62%;
+    left: 50%;
 }
 
 .bag:hover {
