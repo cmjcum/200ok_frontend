@@ -37,3 +37,10 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
+
+
+
+.border_solid{
+  border: 1px solid red;
+}
