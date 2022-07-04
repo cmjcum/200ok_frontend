@@ -20,8 +20,15 @@
     <title>200ok</title>
 </head>
 
+<!--  loading  -->
+<script>
+    $(document).ready(function() {
+        change_mydormitory() 
+    });
+</script>
+
 <!-- BG -->
-<body class="rc-bg bg">
+<body id="mybg" class="bg">
 
 <!-- Header -->
 <header>
@@ -36,12 +43,12 @@
         <a name="previous"></a>
         <div class="element">
             <div class="dorm-logo">
-                <div class="rc-logo bg"></div>
+                <div id="mydormlogo" class="bg"></div>
             </div>
             <div class="dorm-name title-font">
-                <p>Ravenclaw</p></div>
+                <p id="mydorm1">Ravenclaw</p></div>
             <div class="dorm-body body-font">
-                <p>Congratulations on being sorted into Ravenclaw</p>
+                <p>Congratulations on being sorted into <span id="mydorm2">Ravenclaw</span></p>
                 <p>Share your house and student ID card</p>
             </div>
             <div>
@@ -61,20 +68,20 @@
         <div class="element">
             <div class="student-id">
                 <div class="id-card">
-                    <div class="id-card-frame rc-id-card">
+                    <div id="myic" class="id-card-frame">
                         <div class="id-card-front">
                             <div class="portrait"></div>
-                            <div class="student-name kr-font">루나 러브굿</div>
+                            <div id="myname" class="student-name kr-font">루나 러브굿</div>
                         </div>
                     </div>
-                    <div class="id-card-frame rc-id-card2">
+                    <div id="myic2" class="id-card-frame">
                         <div class="id-card-back">
-                            <div class="id-card-dorm-logo rc-logo bg"></div>
-                            <div class="id-card-info btn-font">
-                                <li>Name : <span>Luna Lovegood</span></li>
-                                <li>Birthday : <span>1981-02-13</span></li>
-                                <li>Student ID : <span>22040001</span></li>
-                                <li>Date of admission : <span>2022-07-01</span></li>
+                            <div id="myiclogo"class="id-card-dorm-logo bg"></div>
+                            <div id="myinfo" class="id-card-info btn-font">
+                                <li>Name : <span id="name">Luna Lovegood</span></li>
+                                <li>Birthday : <span id="birthday">1981-02-13</span></li>
+                                <li>Student ID : <span id="student_id">22040001</span></li>
+                                <li>Date of admission : <span id="admission">2022-07-01</span></li>
                             </div>
                         </div>
                     </div>
@@ -93,4 +100,5 @@
     </div>
 </div>
 </body>
+<script type="text/javascript" src="static/js/dormitory.js" defer></script>
 </html>

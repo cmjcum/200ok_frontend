@@ -5,24 +5,29 @@
     <meta charset="UTF-8">
 
     <!-- JS -->
-    <script shf="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script shf="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
             crossorigin="anonymous"></script>
 
     <!-- favicon -->
 
     <!-- JS,CSS -->
-    <script type="text/javascript" src="/static/js/dormitory.js" defer></script>
+
     <link rel="stylesheet" href="static/css/dormitory.css"/>
 
     <title>200ok</title>
 </head>
+
+<!--  loading  -->
 <script>
-    $(document).ready(function() { change_myroom() });
+    $(document).ready(function() {
+        change_myroom() 
+    });
 </script>
+
 <!-- BG -->
-<body id=mybg class="hf-bg bg">
+<body id="mybg" class="bg">
 
 <!-- Header -->
 <header>
@@ -33,9 +38,9 @@
 
     <!-- my room -->
     <div class="myroom">
-        <div id=myroom class="hf-room bg"></div>
-        <div id=mybed class="bed-name hf-bed-name title-font">Luna Lovegood</div>
-        <div id="mybag open_modal" class="btn bag hf-bag"></div>
+        <div id="myroom" class="bg"></div>
+        <div id="mybed" class="bed-name title-font">Luna Lovegood</div>
+        <div id="mybag" class="btn bag"></div>
         <button class="btn lounge-btn btn-font">RETURN TO LOUNGE</button>
         <div class="arrow-btn"></div>
     </div>
@@ -46,20 +51,20 @@
             <div class="close-area">X</div>
             <div class="content">
                 <div class="id-card">
-                    <div id=myic class="id-card-frame hf-id-card">
+                    <div id="myic" class="id-card-frame ">
                         <div class="id-card-front">
                             <div class="portrait"></div>
                             <div id=myname class="student-name kr-font">루나 러브굿</div>
                         </div>
                     </div>
-                    <div id=myic2 class="id-card-frame hf-id-card2">
+                    <div id="myic2" class="id-card-frame">
                         <div class="id-card-back">
-                            <div id=myiclogo class="id-card-dorm-logo hf-logo bg"></div>
-                            <div id=myinfo class="id-card-info btn-font">
-                                <li>Name : <span>Luna Lovegood</span></li>
-                                <li>Birthday : <span>1981-02-13</span></li>
-                                <li>Student ID : <span>22040001</span></li>
-                                <li>Date of admission : <span>2022-07-01</span></li>
+                            <div id="myiclogo"class="id-card-dorm-logo bg"></div>
+                            <div id="myinfo" class="id-card-info btn-font">
+                                <li>Name : <span id="name">Luna Lovegood</span></li>
+                                <li>Birthday : <span id="birthday">1981-02-13</span></li>
+                                <li>Student ID : <span id="student_id">22040001</span></li>
+                                <li>Date of admission : <span id="admission">2022-07-01</span></li>
                             </div>
                         </div>
                     </div>
@@ -69,42 +74,6 @@
     </div>
 </div>
 </body>
-<!--<script>-->
-<!--    const modal = document.getElementById("modal")-->
 
-<!--    function modalOn() {-->
-<!--        modal.style.display = "flex"-->
-<!--    }-->
-
-<!--    function isModalOn() {-->
-<!--        return modal.style.display === "flex"-->
-<!--    }-->
-
-<!--    function modalOff() {-->
-<!--        modal.style.display = "none"-->
-<!--    }-->
-
-<!--    const btnModal = document.getElementById("open_modal")-->
-<!--    btnModal.addEventListener("click", e => {-->
-<!--        modalOn()-->
-<!--    })-->
-
-<!--    const closeBtn = modal.querySelector(".close-area")-->
-<!--    closeBtn.addEventListener("click", e => {-->
-<!--        modalOff()-->
-<!--    })-->
-
-<!--    modal.addEventListener("click", e => {-->
-<!--        const evTarget = e.target-->
-<!--        if (evTarget.classList.contains("modal-overlay")) {-->
-<!--            modalOff()-->
-<!--        }-->
-<!--    })-->
-
-<!--    window.addEventListener("keyup", e => {-->
-<!--        if (isModalOn() && e.key === "Escape") {-->
-<!--            modalOff()-->
-<!--        }-->
-<!--    })-->
-<!--</script>-->
+<script type="text/javascript" src="static/js/myroom.js" defer></script>
 </html>
