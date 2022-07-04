@@ -2,7 +2,7 @@ name: front
 on:
   push:
     branches:
-      - login
+      - master
 jobs:
   build:
     runs-on: ubuntu-latest
