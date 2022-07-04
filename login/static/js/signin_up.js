@@ -10,11 +10,6 @@ async function handleSignup() {
         password: document.getElementById('floatingPassword').value,
     }
 
-    // if (signupData.username != signupData.fullname) {
-    //     alert("비밀번호가 일치하지 않습니다.")
-    //     window.location.reload;
-    // }
-
     // const response = await fetch('url 작성')
     const response = await fetch(`${backend_base_url}/user/`, {
         headers: {
@@ -39,13 +34,10 @@ async function handleSignup() {
 
 
 async function handleSignin() {
-    console.log("로그인")
     const loginData = {
-        username: document.getElementById("floatingInput").value,
-        password: document.getElementById('floatingPassword').value
+        username: document.getElementById("floatingInputSignIn").value,
+        password: document.getElementById('floatingPasswordSignIn').value
     }
-    console.log("로그인2")
-
 
     const response = await fetch(`${backend_base_url}/user/api/token/`, {
         headers: {
@@ -56,9 +48,7 @@ async function handleSignin() {
         body: JSON.stringify(loginData)
     }
     )
-    // //
     response_json = await response.json()
-    console.log("로그인3")
 
 
     if (response.status == 200) {
@@ -78,8 +68,6 @@ async function handleSignin() {
     } else {
         alert("일치하지 않는 아이디나 비밀번호입니다.")
     }
-    console.log("로그인4")
-
 }
 
 
@@ -88,7 +76,6 @@ function logout() {
     // window.location.replace(`${frontend_base_url}/signin_up.html`);
     alert('로그아웃')
 }
-
 
 
 // html에서 업로드하는 file을 s3에 저장시키는 코드
