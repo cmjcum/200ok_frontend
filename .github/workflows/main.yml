@@ -1,5 +1,6 @@
 name: front
 on:
+#  push 할 때마다 실행
   push:
     branches:
       - master
@@ -26,5 +27,5 @@ jobs:
         uses: chetan/invalidate-cloudfront-action@master
         env:
           DISTRIBUTION: ${{ secrets.DISTRIBUTION_ID }}
-          PATHS: '/index.html'
+          PATHS: '/signin_up.html'
         continue-on-error: true

@@ -41,8 +41,8 @@ async function handleSignup() {
 async function handleSignin() {
     console.log("로그인")
     const loginData = {
-        username: document.getElementById("floatingInput").value,
-        password: document.getElementById('floatingPassword').value
+        username: document.getElementById("floatingInputSignIn").value,
+        password: document.getElementById('floatingPasswordSignIn').value
     }
     console.log("로그인2")
 
