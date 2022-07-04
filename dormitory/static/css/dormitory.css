@@ -1,0 +1,482 @@
+* {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    position: relative;
+    color: white;
+}
+
+li {
+    list-style: none;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+/*  fonts  */
+@font-face {
+    font-family: "Parisienne-Regular";
+    src: url("../fonts/Parisienne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "KoPubWorld-light";
+    src: url("../fonts/KoPubWorld Batang Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "IBM-light";
+    src: url("../fonts/IBMPlexSansKR-Light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Noto Sans KR Regular";
+    src: url("../fonts/NotoSansKR-Regular.otf") format("truetype");
+}
+
+.title-font {
+    font-family: 'Parisienne-Regular', serif;
+}
+
+.body-font {
+    font-family: 'KoPubWorld-light', serif;
+}
+
+.btn-font {
+    font-family: 'IBM-light', serif;
+}
+
+.kr-font {
+    font-family: 'Noto Sans KR Regular', serif;
+}
+
+.xs-font {
+    font-size: 5px;
+}
+
+.s-font {
+    font-size: 10px;
+}
+
+.l-font {
+    font-size: 20px;
+}
+
+/*  animation  */
+
+/*.item::after {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    top: xyz;*/
+/*    left: xyz;*/
+/*}*/
+
+
+/*  background  */
+.bg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.gd-bg {
+    background-image: url("../../images/dormitory/gd_bg.jpg");
+}
+
+.hf-bg {
+    background-image: url("../../images/dormitory/hf_bg.jpg");
+}
+
+.sth-bg {
+    background-image: url("../../images/dormitory/sth_bg.jpg");
+}
+
+.rc-bg {
+    background-image: url("../../images/dormitory/rc_bg.jpg");
+}
+
+
+/*  logo  */
+.hogwarts-logo {
+    background-image: url("../../images/hw_logo.png");
+}
+
+.gd-logo {
+    background-image: url("../../images/dormitory/gd_logo.png");
+}
+
+.hf-logo {
+    background-image: url("../../images/dormitory/hf_logo.png");
+}
+
+.sth-logo {
+    background-image: url("../../images/dormitory/sth_logo.png");
+}
+
+.rc-logo {
+    background-image: url("../../images/dormitory/rc_logo.png");
+}
+
+
+/*  icon  */
+.facebook {
+    background-image: url("../../images/dormitory/facebook.png");
+}
+
+.kakaotalk {
+    background-image: url("../../images/dormitory/kakaotalk.png");
+}
+
+.link_share {
+    background-image: url("../../images/dormitory/link_share.png");
+}
+
+
+/*  id-card  */
+.gd-id-card {
+    background-image: url("../../images/dormitory/gd_card_form.png");
+}
+
+.hf-id-card {
+    background-image: url("../../images/dormitory/hf_card_form.png");
+}
+
+.sth-id-card {
+    background-image: url("../../images/dormitory/sth_card_form.png");
+}
+
+.rc-id-card {
+    background-image: url("../../images/dormitory/rc_card_form.png");
+}
+
+.gd-id-card2 {
+    background-image: url("../../images/dormitory/gd_card_form2.png");
+}
+
+.hf-id-card2 {
+    background-image: url("../../images/dormitory/hf_card_form2.png");
+}
+
+.sth-id-card2 {
+    background-image: url("../../images/dormitory/sth_card_form2.png");
+}
+
+.rc-id-card2 {
+    background-image: url("../../images/dormitory/rc_card_form2.png");
+}
+
+
+/*  room  */
+.gd-room {
+    background-image: url("../../images/dormitory/gd_room.jpg");
+}
+
+.hf-room {
+    background-image: url("../../images/dormitory/hf_room.jpg");
+}
+
+.sth-room {
+    background-image: url("../../images/dormitory/sth_room.jpg");
+}
+
+.rc-room {
+    background-image: url("../../images/dormitory/rc_room.jpg");
+}
+
+
+/*  header  */
+.home-logo {
+    width: 86px;
+    height: 86px;
+    position: fixed;
+    top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/*  page-navigator  */
+.page-nav {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    position: fixed;
+    transform: translate(-50%);
+
+}
+
+.page-nav-next {
+    background-image: url("../../images/dormitory/next.png");
+    top: 50%;
+    left: 95%;
+}
+
+.page-nav-pre {
+    background-image: url("../../images/dormitory/previous.png");
+    top: 50%;
+    left: 5%;
+}
+
+
+/*  Dormitory sorting result page */
+/*  body  */
+.wrapper {
+    margin-top: 6%;
+}
+
+.scroll-wrap {
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-direction: row;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    scroll-behavior: smooth;
+}
+
+.scroll-wrap::-webkit-scrollbar {
+    display: none;
+}
+
+.element {
+    width: 100%;
+    height: 100%;
+    /*background: navy;*/
+    line-height: 40px;
+    text-align: center;
+    display: inline-block;
+}
+
+
+/*  element1  */
+.dorm-logo {
+    width: 250px;
+    height: 322px;
+    margin: auto;
+    padding: 3%;
+}
+
+.dorm-name {
+    font-size: 70px;
+    font-weight: bold;
+    padding-bottom: 2%;
+}
+
+.dorm-body {
+    font-size: 25px;
+    padding-bottom: 2%;
+}
+
+.go-room-btn {
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 50px;
+    background-color: transparent;
+    padding: 10px 20px;
+}
+
+
+/*  element2  */
+.student-id {
+    padding: 0 34.5% 0 34.5%;
+}
+
+.id-card {
+    display: flex;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 30px;
+}
+
+.id-card-frame {
+    background-size: cover;
+    width: 265px;
+    height: 400px;
+    padding: 1%;
+    margin-bottom: 3%;
+}
+
+.portrait {
+    background-image: url("../../images/luna.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 130px;
+    height: 170px;
+    margin: 40% 25% 1% 25%;
+}
+
+.student-name {
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.id-card-info {
+    font-size: 12px;
+    text-align: left;
+    line-height: 190%;
+    padding: 8% 11% 5% 13%;
+}
+
+.id-card-dorm-logo {
+    width: 130px;
+    height: 200px;
+    margin: 15% 25% 0 25%;
+}
+
+
+/*  share_icon  */
+.share {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1.5%;
+
+}
+
+.share li {
+    width: 32px;
+    height: 32px;
+    background-size: cover;
+    margin: 1%;
+}
+
+
+/*  my room page */
+/*  body  */
+.myroom {
+    width: 1044px;
+    height: 708px;
+    padding-top: 3%;
+    margin: auto;
+}
+
+/*  bed-name location  */
+.bed-name {
+    font-size: 35px;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+.gd-bed-name {
+    top: 19%;
+    left: 50%;
+}
+
+.hf-bed-name {
+    top: 32%;
+    left: 50%;
+}
+
+.sth-bed-name {
+    top: 21%;
+    left: 50%;
+}
+
+.rc-bed-name {
+    top: 11%;
+    left: 50%;
+}
+
+
+/*  bag location  */
+.bag {
+    background-image: url("../../images/dormitory/bag.png");
+    background-position: center;
+    background-size: cover;
+    width: 140px;
+    height: 105px;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
+
+.gd-bag {
+    top: 73%;
+    left: 50%;
+}
+
+.hf-bag {
+    top: 74%;
+    left: 50%;
+}
+
+.sth-bag {
+    top: 70%;
+    left: 50%;
+}
+
+.rc-bag {
+    top: 62%;
+    left: 50%;
+}
+
+.bag:hover {
+    transform: scale(1.2) translateX(-60px);
+}
+
+.lounge-btn {
+    font-size: 16px;
+    border: 1px solid white;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 0.2);
+    position: absolute;
+    top: 89%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+}
+
+.arrow-btn {
+    background-image: url("../../images/dormitory/arrow.png");
+    background-size: cover;
+    position: absolute;
+    top: 96%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 25px;
+}
+
+
+/*  modal - student ID card  */
+#modal.modal-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#modal .modal-window {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-style: none;
+    border-radius: 10px;
+    width: 630px;
+    height: 440px;
+    position: relative;
+    top: 3%;
+    padding: 10px;
+}
+
+#modal .close-area {
+    display: inline;
+    float: right;
+    padding-right: 10px;
+    cursor: pointer;
+    text-shadow: 1px 1px 2px gray;
+    color: white;
+}
+
+#modal .content {
+    margin-top: 20px;
+    margin-left: 20px;
+}
