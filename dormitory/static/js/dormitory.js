@@ -9,6 +9,8 @@ async function change_mydormitory() {
 
     const response = await fetch(`${backend_base_url}/dorm/sorting/`, {
         method: 'GET',
+        headers : { Authorization : "Bearer " + localStorage.getItem("access")},
+        withCredentials: true,
     })
     .then(response => response.json())
     .then(data => {      
@@ -86,16 +88,15 @@ function clipboard_share() {
 
 // save image
 function save_image() {
-    $("#save").click(function () {
-        html2canvas($("#downloadImage"), {
+        html2canvas($("#student-id"), {
             onrendered: function (canvas) {
                 canvas.toBlob(function (blob) {
                     saveAs(blob, 'myidcard.png')
-                })
-            }
-        })
+            })
+        }
     })
 }
+
 
 // const BagOpen = document.getElementById("bag_open")
 // fetch("https://baconipsum.com/api/?type=all-meat&paras=200&format=html")

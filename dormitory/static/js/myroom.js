@@ -8,6 +8,8 @@ async function change_myroom() {
 
     const response = await fetch(`${backend_base_url}/dorm/myroom/`, {
         method: 'GET',
+        headers : { Authorization : "Bearer " + localStorage.getItem("access")},
+        withCredentials: true,  
     })
     .then(response => response.json())
     .then(data => {      
