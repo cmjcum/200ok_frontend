@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    background-color: black;
+}
+
+.background-top {
+    width: 100%;
+    aspect-ratio: 13/60;
+
+    position: absolute;
+
+    background-image: url('../../images/background_long.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}

@@ -10,11 +10,6 @@ async function handleSignup() {
         password: document.getElementById('floatingPassword').value,
     }
 
-    // if (signupData.username != signupData.fullname) {
-    //     alert("비밀번호가 일치하지 않습니다.")
-    //     window.location.reload;
-    // }
-
     // const response = await fetch('url 작성')
     const response = await fetch(`${backend_base_url}/user/`, {
         headers: {
@@ -40,8 +35,8 @@ async function handleSignup() {
 
 async function handleSignin() {
     const loginData = {
-        username: document.getElementById("floatingInput").value,
-        password: document.getElementById('floatingPassword').value
+        username: document.getElementById("floatingInputSignIn").value,
+        password: document.getElementById('floatingPasswordSignIn').value
     }
 
     const response = await fetch(`${backend_base_url}/user/api/token/`, {
@@ -53,8 +48,8 @@ async function handleSignin() {
         body: JSON.stringify(loginData)
     }
     )
-    // //
     response_json = await response.json()
+
 
     if (response.status == 200) {
         // jwt token 의 access, refresh 값을 각각의 이름으로 저장한다.
@@ -80,4 +75,21 @@ function logout() {
     window.localStorage.clear();
     // window.location.replace(`${frontend_base_url}/signin_up.html`);
     alert('로그아웃')
+}
+
+
+// html에서 업로드하는 file을 s3에 저장시키는 코드
+// 이 코드 실행시 s3에 파일 저장
+function save() {
+    var form_data = new FormData($('#upload-file')[0]);
+    $.ajax({
+        type: 'POST',
+        url: '/fileupload',
+        data: form_data,
+        processData: false,
+        contentType: false,
+        success: function (data) {
+            alert("파일이 업로드 되었습니다!!");
+        },
+    });
 }
