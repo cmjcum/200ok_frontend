@@ -39,10 +39,13 @@ async function handleSignup() {
 
 
 async function handleSignin() {
+    console.log("로그인")
     const loginData = {
         username: document.getElementById("floatingInput").value,
         password: document.getElementById('floatingPassword').value
     }
+    console.log("로그인2")
+
 
     const response = await fetch(`${backend_base_url}/user/api/token/`, {
         headers: {
@@ -55,6 +58,8 @@ async function handleSignin() {
     )
     // //
     response_json = await response.json()
+    console.log("로그인3")
+
 
     if (response.status == 200) {
         // jwt token 의 access, refresh 값을 각각의 이름으로 저장한다.
@@ -73,6 +78,8 @@ async function handleSignin() {
     } else {
         alert("일치하지 않는 아이디나 비밀번호입니다.")
     }
+    console.log("로그인4")
+
 }
 
 
