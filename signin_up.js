@@ -88,3 +88,21 @@ function logout() {
     // window.location.replace(`${frontend_base_url}/signin_up.html`);
     alert('로그아웃')
 }
+
+
+
+// html에서 업로드하는 file을 s3에 저장시키는 코드
+// 이 코드 실행시 s3에 파일 저장
+function save() {
+    var form_data = new FormData($('#upload-file')[0]);
+    $.ajax({
+        type: 'POST',
+        url: '/fileupload',
+        data: form_data,
+        processData: false,
+        contentType: false,
+        success: function (data) {
+            alert("파일이 업로드 되었습니다!!");
+        },
+    });
+}
