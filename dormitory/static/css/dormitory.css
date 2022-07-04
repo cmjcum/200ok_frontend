@@ -261,12 +261,12 @@ li {
 .dorm-name {
     font-size: 70px;
     font-weight: bold;
-    padding-bottom: 2%;
+    padding-bottom: 1.5%;
 }
 
 .dorm-body {
     font-size: 25px;
-    padding-bottom: 2%;
+    padding-bottom: 1.5%;
 }
 
 .go-room-btn {
@@ -327,19 +327,24 @@ li {
 
 
 /*  share_icon  */
+.share_fix {
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
 .share {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 1.5%;
-
 }
 
 .share li {
     width: 32px;
     height: 32px;
     background-size: cover;
-    margin: 1%;
+    margin: 15px;
 }
 
 

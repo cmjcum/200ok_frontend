@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
 
     <!-- JS -->
+    <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/5ed507ef8aa53d8ecfea96d96bc7214cd2476fd2/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -12,7 +14,7 @@
 
     <!-- favicon -->
 
-    <!-- JS,CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="static/css/dormitory.css"/>
 
     <title>200ok</title>
@@ -45,10 +47,12 @@
             <div>
                 <button class="btn go-room-btn btn-font">LOOK AROUND YOUR ROOM</button>
             </div>
-            <div class="share">
-                <li class="btn facebook">
-                <li class="btn kakaotalk">
-                <li class="btn link_share">
+            <div class="share_fix">
+                <div class="share">
+                    <li id="btn_facebook" onclick="share_facebook()" class="btn facebook"></li>
+                    <li id="btn_Kakao" onclick="share_kakao()" class="btn kakaotalk"></li>
+                    <li id="btn_Link" onclick="clipboard_share()" class="btn link_share"></li>
+                </div>
             </div>
             <a href="#next" class="page-nav page-nav-next"></a>
         </div>
@@ -80,10 +84,8 @@
                 <p>Congratulations on getting into Hogwarts</p>
                 <p>Share your house and student ID card</p>
             </div>
-            <div class="share">
-                <li class="btn facebook">
-                <li class="btn kakaotalk">
-                <li class="btn link_share">
+            <div>
+                <button onclick="save_image()" class="btn go-room-btn btn-font">SAVE YOUR STUDENT ID CARD</button>
             </div>
         </div>
         <a href="#previous" class="page-nav page-nav-pre"></a>
