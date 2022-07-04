@@ -14,6 +14,28 @@ li {
     cursor: pointer;
 }
 
+
+/* animation keyframes */
+@keyframes scale {
+    0% {
+    transform: none translateY(-50%);
+    }
+    25% {
+    transform: scale(2) translateY(-50%);
+    }
+    50% {
+    transform: scale(1.7) translateY(-50%);
+    }
+    75% {
+    transform: scale(3) translateY(-50%);
+    }
+
+    100% {
+    transform: scale(4) translateY(-50%);
+    }
+}
+
+
 /*  fonts  */
 @font-face {
     font-family: "Parisienne-Regular";
@@ -62,15 +84,6 @@ li {
 .l-font {
     font-size: 20px;
 }
-
-/*  animation  */
-
-/*.item::after {*/
-/*    content: "";*/
-/*    position: absolute;*/
-/*    top: xyz;*/
-/*    left: xyz;*/
-/*}*/
 
 
 /*  background  */
@@ -252,7 +265,7 @@ li {
 
 /*  element1  */
 .dorm-logo {
-    width: 250px;
+    width: 260px;
     height: 322px;
     margin: auto;
     padding: 3%;
@@ -320,9 +333,9 @@ li {
 }
 
 .id-card-dorm-logo {
-    width: 130px;
+    width: 160px;
     height: 200px;
-    margin: 15% 25% 0 25%;
+    margin: 15% 21.5% 0 21.5%;
 }
 
 
@@ -366,22 +379,22 @@ li {
 
 .gd-bed-name {
     top: 19%;
-    left: 50%;
+    left: 52%;
 }
 
 .hf-bed-name {
     top: 32%;
-    left: 50%;
+    left: 50.5%;
 }
 
 .sth-bed-name {
-    top: 21%;
-    left: 50%;
+    top: 21.5%;
+    left: 51.5%;
 }
 
 .rc-bed-name {
     top: 11%;
-    left: 50%;
+    left: 51%;
 }
 
 
@@ -393,32 +406,38 @@ li {
     width: 140px;
     height: 105px;
     position: absolute;
-    transform: translateX(-50%);
     transition: 0.3s;
+}
+
+.bag_ani {
+    animation: scale 3s ease-in-out;
+    -moz-animation: scale 3s ease-in-out;
+    -webkit-animation: scale 3s ease-in-out;
+    -o-animation: scale 3s ease-in-out;
 }
 
 .gd-bag {
     top: 73%;
-    left: 50%;
+    left: 45%;
 }
 
 .hf-bag {
     top: 74%;
-    left: 50%;
+    left: 43.5%;
 }
 
 .sth-bag {
     top: 70%;
-    left: 50%;
+    left: 44%;
 }
 
 .rc-bag {
     top: 62%;
-    left: 50%;
+    left: 43.5%;
 }
 
 .bag:hover {
-    transform: scale(1.2) translateX(-60px);
+    transform: scale(1.2);
 }
 
 .lounge-btn {
