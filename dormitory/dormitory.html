@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
 
     <!-- JS -->
+    <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/5ed507ef8aa53d8ecfea96d96bc7214cd2476fd2/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
             integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
@@ -12,14 +14,21 @@
 
     <!-- favicon -->
 
-    <!-- JS,CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="static/css/dormitory.css"/>
 
     <title>200ok</title>
 </head>
 
+<!--  loading  -->
+<script>
+    $(document).ready(function() {
+        change_mydormitory() 
+    });
+</script>
+
 <!-- BG -->
-<body class="rc-bg bg">
+<body id="mybg" class="bg">
 
 <!-- Header -->
 <header>
@@ -34,21 +43,23 @@
         <a name="previous"></a>
         <div class="element">
             <div class="dorm-logo">
-                <div class="rc-logo bg"></div>
+                <div id="mydormlogo" class="bg"></div>
             </div>
             <div class="dorm-name title-font">
-                <p>Ravenclaw</p></div>
+                <p id="mydorm1">Ravenclaw</p></div>
             <div class="dorm-body body-font">
-                <p>Congratulations on being sorted into Ravenclaw</p>
+                <p>Congratulations on being sorted into <span id="mydorm2">Ravenclaw</span></p>
                 <p>Share your house and student ID card</p>
             </div>
             <div>
                 <button class="btn go-room-btn btn-font">LOOK AROUND YOUR ROOM</button>
             </div>
-            <div class="share">
-                <li class="btn facebook">
-                <li class="btn kakaotalk">
-                <li class="btn link_share">
+            <div class="share_fix">
+                <div class="share">
+                    <li id="btn_facebook" onclick="share_facebook()" class="btn facebook"></li>
+                    <li id="btn_Kakao" onclick="share_kakao()" class="btn kakaotalk"></li>
+                    <li id="btn_Link" onclick="clipboard_share()" class="btn link_share"></li>
+                </div>
             </div>
             <a href="#next" class="page-nav page-nav-next"></a>
         </div>
@@ -57,20 +68,20 @@
         <div class="element">
             <div class="student-id">
                 <div class="id-card">
-                    <div class="id-card-frame rc-id-card">
+                    <div id="myic" class="id-card-frame">
                         <div class="id-card-front">
                             <div class="portrait"></div>
-                            <div class="student-name kr-font">루나 러브굿</div>
+                            <div id="myname" class="student-name kr-font">루나 러브굿</div>
                         </div>
                     </div>
-                    <div class="id-card-frame rc-id-card2">
+                    <div id="myic2" class="id-card-frame">
                         <div class="id-card-back">
-                            <div class="id-card-dorm-logo rc-logo bg"></div>
-                            <div class="id-card-info btn-font">
-                                <li>Name : <span>Luna Lovegood</span></li>
-                                <li>Birthday : <span>1981-02-13</span></li>
-                                <li>Student ID : <span>22040001</span></li>
-                                <li>Date of admission : <span>2022-07-01</span></li>
+                            <div id="myiclogo"class="id-card-dorm-logo bg"></div>
+                            <div id="myinfo" class="id-card-info btn-font">
+                                <li>Name : <span id="name">Luna Lovegood</span></li>
+                                <li>Birthday : <span id="birthday">1981-02-13</span></li>
+                                <li>Student ID : <span id="student_id">22040001</span></li>
+                                <li>Date of admission : <span id="admission">2022-07-01</span></li>
                             </div>
                         </div>
                     </div>
@@ -80,10 +91,8 @@
                 <p>Congratulations on getting into Hogwarts</p>
                 <p>Share your house and student ID card</p>
             </div>
-            <div class="share">
-                <li class="btn facebook">
-                <li class="btn kakaotalk">
-                <li class="btn link_share">
+            <div>
+                <button onclick="save_image()" class="btn go-room-btn btn-font">SAVE YOUR STUDENT ID CARD</button>
             </div>
         </div>
         <a href="#previous" class="page-nav page-nav-pre"></a>
@@ -91,4 +100,5 @@
     </div>
 </div>
 </body>
+<script type="text/javascript" src="static/js/dormitory.js" defer></script>
 </html>
