@@ -1,5 +1,5 @@
 const backend_base_url = "http://127.0.0.1:8000"
-const frontend_base_url = "http://127.0.0.1:5500"
+const frontend_base_url = "https://62c2f479f83fa3026bf23322--super-fudge-edd539.netlify.app/"
 
 
 async function handleSignup() {
