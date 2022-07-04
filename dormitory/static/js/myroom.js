@@ -50,6 +50,10 @@ function getYmd10() {
 
 
 //  bag modal
+function click_event() {
+    setTimeout(modalOn, 3000)
+}
+
 const modal = document.getElementById("modal")
 
 function modalOn() {
@@ -66,7 +70,7 @@ function modalOff() {
 
 const btnModal = document.getElementById("mybag")
 btnModal.addEventListener("click", e => {
-    modalOn()
+    click_event()
 })
 
 const closeBtn = modal.querySelector(".close-area")
@@ -87,3 +91,20 @@ window.addEventListener("keyup", e => {
     }
 })
 
+
+//  bag animation btn
+element = document.getElementById("mybag");
+
+element.addEventListener("click", function(e) {
+    e.preventDefault;
+
+  // -> removing the class
+    element.classList.remove("bag_ani");
+
+  // -> triggering reflow /* The actual magic */
+  // without this it wouldn't work. Try uncommenting the line and the transition won't be retriggered.
+    element.offsetWidth = element.offsetWidth;
+
+  // -> and re-adding the class
+    element.classList.add("bag_ani");
+}, false);
