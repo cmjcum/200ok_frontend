@@ -29,9 +29,7 @@ async function change_mydormitory() {
 
         // student id card
         admission = getYmd10(data.join_date)
-        console.log(admission)
         student_id = admission.slice(2, 4) + String(data.dormitory_id).padStart(2,'0') + String(data.id).padStart(4,'0')
-        console.log(student_id)
 
         document.getElementById("myname").innerText= `${data.fullname}`
         document.getElementById("name").innerText= `${data.fullname}`
@@ -54,6 +52,28 @@ function getYmd10() {
 function share_facebook() {
     var sendUrl = "devpad.tistory.com/"; // 전달할 URL
     window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);}
+
+
+function share_kakao() {
+
+    // 사용할 앱의 JavaScript 키 설정
+    Kakao.init('8adc2cfed61d408c49b6df7068aef576');
+
+    // 카카오링크 버튼 생성
+    Kakao.Link.createDefaultButton({
+        container: '#btn_Kakao', // 카카오공유버튼ID
+        objectType: 'feed',
+        content: {
+            title: "200ok", // 보여질 제목
+            description: "[당일입학] 당신도 호그와트에 입학할 수 있다!", // 보여질 설명
+            imageUrl: "devpad.tistory.com/", // 콘텐츠 URL
+            link: {
+        mobileWebUrl: "devpad.tistory.com/",
+        webUrl: "devpad.tistory.com/"
+            }
+        }
+    });
+}
 
 
 function clipboard_share() {
@@ -98,7 +118,6 @@ function save_image() {
 }
 
 
-// const BagOpen = document.getElementById("bag_open")
-// fetch("https://baconipsum.com/api/?type=all-meat&paras=200&format=html")
-//     .then(response => response.text())
-//     .then(result => BagOpen.innerHTML = result)
+function go_room() {
+    window.location.href = "myroom.html";
+}
