@@ -107,17 +107,24 @@ function clipboard_share() {
 
 
 // save image
-function save_image() {
-        html2canvas($("#student-id"), {
-            onrendered: function (canvas) {
-                canvas.toBlob(function (blob) {
-                    saveAs(blob, 'myidcard.png')
-            })
-        }
-    })
-}
+// function save_image(div){
+// 	div = div[0]
+// 	html2canvas(div).then(function(canvas){
+// 		var myImage = canvas.toDataURL();
+// 		downloadURI(myImage, "myidcard.png") 
+// 	});
+// }
+
+// function downloadURI(uri, name){
+// 	var link = document.createElement("a")
+// 	link.download = name;
+// 	link.href = uri;
+// 	document.body.appendChild(link);
+// 	link.click();
+// }
 
 
+// page move
 function go_room() {
-    window.location.href = "myroom.html";
+    window.location.replace(`${backend_base_url}/lounge/lounge.html`);
 }
