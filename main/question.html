@@ -4,16 +4,76 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/5ed507ef8aa53d8ecfea96d96bc7214cd2476fd2/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
     
     <title>test</title>
 
     <link rel="stylesheet" href="static/css/question.css" />
+    <script type="text/javascript" src="./static/js/question.js"></script>
 
+    <script>
+        $(document).ready(function() {
+            load_question_page() 
+            $('#second').hide()
+        });
+    </script>
+    
 </head>
 
 <body>
 
-    <div class="background-top">
+    <div class="background-top"></div>
+
+    <div class="wrap">
+
+        <div class="test-title"></div>
+        
+        <div id="first" class="hidable-div">
+            <div id="questions" class="questions">
+
+            </div>
+    
+            <button id="next_btn" class="btn" onClick="click_next_btn()">⭐ 다음 ⭐</button>
+        </div>
+        
+        <div id="second" class="hidable-div">
+            <div>
+                <p>Birthday</p>
+                <input type="text" id="birthday" class="birthday" placeholder="YYYY-MM-DD">
+            </div>
+
+            <div id="question_dorm" class="question">
+                <div class="q-title">가장 가고싶은 기숙사는?</div>
+                <div class="answer">
+                    <label>
+                        <input type="radio" name="question_dorm" value="1">그리핀도르
+                    </label>
+                </div>
+                <div class="answer">
+                    <label>
+                        <input type="radio" name="question_dorm" value="2">후플푸프
+                    </label>
+                </div>
+                <div class="answer">
+                    <label>
+                        <input type="radio" name="question_dorm" value="3">슬리데린
+                    </label>
+                </div>
+                <div class="answer">
+                    <label>
+                        <input type="radio" name="question_dorm" value="4">레번클로
+                    </label>
+                </div>
+            </div>
+
+            <button id="submit_btn" class="btn" onClick="click_submit_btn()">⭐ 제출 ⭐</button>
+
+        </div>
     </div>
 
 </body>
