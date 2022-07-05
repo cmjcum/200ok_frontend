@@ -4,12 +4,6 @@
     <!-- Required meta tags -->
     <meta charset="UTF-8">
 
-    <!-- JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-            crossorigin="anonymous"></script>
-
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="57x57" href="../favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="../favicon/apple-icon-60x60.png">
@@ -36,13 +30,6 @@
     <title>200ok</title>
 </head>
 
-<!--  loading  -->
-<script>
-    $(document).ready(function() {
-        change_myroom() 
-    });
-</script>
-
 <!-- BG -->
 <body id="mybg" class="bg">
 
@@ -58,7 +45,7 @@
         <div id="myroom" class="bg"></div>
         <div id="mybed" class="bed-name title-font">Luna Lovegood</div>
         <div id="mybag" class="btn bag"></div>
-        <button class="btn lounge-btn btn-font">RETURN TO LOUNGE</button>
+        <button class="btn lounge-btn btn-font" onclick="go_lounge()">RETURN TO LOUNGE</button>
         <div class="arrow-btn"></div>
     </div>
 
@@ -90,7 +77,30 @@
         </div>
     </div>
 </div>
+<div class="container">
+    <input type="checkbox" id="toggle-btn">
+    <label for="toggle-btn"></label>
+    <div class="nav btn-font">
+        <a href="/index.html">HOME</a>
+        <a href="dormitory.html">RESULT & SHARE</a>
+        <a href="../lounge/lounge.html">LOUNGE</a>
+        <button class="btn-font" onclick="logout()">LOGOUT</a>
+</div>    
+
 </body>
 
+<!-- JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
 <script type="text/javascript" src="static/js/myroom.js" defer></script>
+
+<!--  loading  -->
+<script>
+    $(document).ready(function() {
+        change_myroom() 
+    });
+</script>
+
 </html>
