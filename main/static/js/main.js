@@ -18,11 +18,11 @@ async function select_picture() {
     }
     ).then(response => {
         console.log(response)
-        if (response.status === 200) {
+        if (response.status == 200) {
             alert('success')
             // window.location.replace(`${frontend_base_url}/question.html`);
         }
-        if (response.status === 400) {
+        if (response.status == 400) {
             alert(response.status)
         }
     });
