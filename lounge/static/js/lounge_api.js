@@ -35,7 +35,6 @@ async function load_lounge() {
 
       for (var i = 0; i < users_len; i++) {
         portrait = data.house[0].users[i].portrait
-        // portrait = "/images/" + data.house[0].users[i].portrait
         temp_list.push(portrait);
       }
       console.log(temp_list)
@@ -49,13 +48,6 @@ async function load_lounge() {
         $("#portraits-box").append(portrait_temp)
       }
 
-      // chart data
-      // console.log(data.dorm_name)
-      // var dorm_name = [`${data.dorm_name}`]
-      // var users_count = [`${data.users_count}`]
-      // var comments_count = [`${data.comments_count}`]
-
-
       // board data
       board_len = data.board.length
       user_id = data.user[0].id
@@ -63,7 +55,6 @@ async function load_lounge() {
       for (var i = 0; i < board_len; i++) {
         author_id = data.board[i].author
         comment = data.board[i]
-        // console.log(author_id, user_id)
         if (user_id == author_id) {
           board_temp = `
 <tr>
@@ -71,7 +62,6 @@ async function load_lounge() {
     <td>${comment.author_name}</td>
     <td>${comment.content}
         <span class="edit-icon">
-            <i class="bi bi-wrench-adjustable-circle" onclick=""></i> 
             <i class="bi bi-x-circle" onclick="delete_comment(${comment.id})"></i>
         </span>
     </td>
@@ -90,25 +80,27 @@ async function load_lounge() {
         }
       }
 
+      // chart print (기숙사 별 학생 수)
       new Chart(document.getElementById("pie-chart-students"), {
         type: 'pie',
         data: {
-            labels: ['Gryffindor', 'Hufflepuff', 'Slytherin', 'Ravenclaw'],
-            datasets: [{
-                label: "학생수 (명)",
-                backgroundColor: ["#c45850", "#8e5ea2", "#3cba9f", "#e8c3b9"],
+          labels: ['Gryffindor', 'Hufflepuff', 'Slytherin', 'Ravenclaw'],
+          datasets: [{
+            label: "학생수 (명)",
+            backgroundColor: ["#c45850", "#8e5ea2", "#3cba9f", "#e8c3b9"],
                 data: data.users_count,
             }]
         },
         options: {
-            title: {
+          title: {
                 display: true,
                 text: '기숙사 배치 현황'
-            }
+              }
         },
       });
-
-
+      
+      
+      // chart print (기숙사 별 게시글 수)
       new Chart(document.getElementById("pie-chart-board"), {
         type: 'bar',
         data: {
@@ -130,6 +122,7 @@ async function load_lounge() {
     })
 }
 
+
 // method POST
 async function post_comment() {
   console.log("post comment in lounge")
@@ -146,7 +139,6 @@ async function post_comment() {
   document.getElementById("input-comment").value = ''
 
   if (response.status == 200) {
-    alert("등록 완료!")
     location.reload();
 
   } else {
@@ -154,7 +146,19 @@ async function post_comment() {
   }
 }
 
-// 댓글 수정
+
+// method DELETE
+async function delete_comment(comment_id) {
+  console.log("del comment in llounge")
+  
+  const response = await fetch(`${backend_base_url}/lounge/delete/${comment_id}/`, {
+    method: 'DELETE',
+    headers: { Authorization: "Bearer " + localStorage.getItem("access"), }
+  })
+
+  alert("삭제 완료!")
+  location.reload();
+}
 
 
 // method PUT
@@ -179,18 +183,3 @@ async function post_comment() {
 //         alert("등록 실패!")
 //     }
 // }
-
-// method DELETE
-async function delete_comment(comment_id) {
-  console.log("del comment in llounge")
-
-  const response = await fetch(`${backend_base_url}/lounge/delete/${comment_id}/`, {
-    method: 'DELETE',
-    headers: { Authorization: "Bearer " + localStorage.getItem("access"), }
-  })
-
-  alert("삭제 완료!")
-  location.reload();
-
-}
-
