@@ -1,9 +1,8 @@
-const backend_base_url = "http://127.0.0.1:8000"
-const frontend_base_url = "https://62c2f479f83fa3026bf23322--super-fudge-edd539.netlify.app/"
+const backend_base_url = "http://13.209.5.120"
+const frontend_base_url = "http://127.0.0.1:5500"
 
 
 async function handleSignup() {
-    console.log("회원가입 로그")
     const signupData = {
         fullname: document.getElementById('floatingInputFullname').value,
         username: document.getElementById("floatingInput").value,
@@ -25,11 +24,10 @@ async function handleSignup() {
 
     if (response.status == 200) {
         alert('회원 가입 성공')
-        // window.location.replace(`${frontend_base_url}/style.html`);
+        window.location.reload();
     } else {
-        alert(response.status)
+        alert('다시 입력해 주세요')
     }
-    console.log("회원가입 마지막 로그")
 }
 
 
@@ -38,7 +36,6 @@ async function handleSignin() {
         username: document.getElementById("floatingInputSignIn").value,
         password: document.getElementById('floatingPasswordSignIn').value
     }
-
     const response = await fetch(`${backend_base_url}/user/api/token/`, {
         headers: {
             Accept: "application/json",
@@ -49,7 +46,6 @@ async function handleSignin() {
     }
     )
     response_json = await response.json()
-
 
     if (response.status == 200) {
         // jwt token 의 access, refresh 값을 각각의 이름으로 저장한다.
@@ -64,17 +60,10 @@ async function handleSignin() {
 
         localStorage.setItem("payload", jsonPayload);
         alert("로그인 성공")
-        // window.location.replace(`${frontend_base_url}/`);
+        window.location.replace(`${frontend_base_url}/`);
     } else {
         alert("일치하지 않는 아이디나 비밀번호입니다.")
     }
-}
-
-
-function logout() {
-    window.localStorage.clear();
-    // window.location.replace(`${frontend_base_url}/signin_up.html`);
-    alert('로그아웃')
 }
 
 
@@ -98,7 +87,7 @@ function save() {
 // random background
 function random_background() {
     var images = ['background1.jpg', 'background2.jpg', 'background3.jpg'];
-    $('body').css({'background-image': 'url(images/' + images[Math.floor(Math.random() * images.length)] + ')'});
+    $('body').css({ 'background-image': 'url(images/' + images[Math.floor(Math.random() * images.length)] + ')' });
 }
 
 
