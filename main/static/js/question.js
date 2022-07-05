@@ -103,7 +103,10 @@ async function post_dorm_and_birthday(domr_id) {
     }
 
     const response = await fetch(`${backend_base_url}/user/info/`, {
-        headers: {Authorization : "Bearer " + localStorage.getItem("access")},
+        headers: {
+            Authorization : "Bearer " + localStorage.getItem("access"),
+            Accept: "application/json",
+            'Content-type': 'application/json'},
         withCredentials: true,
         method: 'POST',
         body: JSON.stringify(info_data)
@@ -111,7 +114,7 @@ async function post_dorm_and_birthday(domr_id) {
     ).then(response => {
         if (response.status == 200) {
             $('.loader-wrap').hide();
-            alert('success')
+            window.location.replace(`${backend_base_url}/dormitory/dormitory.html`)
         }
         if (response.status == 400) {
             $('.loader-wrap').hide();

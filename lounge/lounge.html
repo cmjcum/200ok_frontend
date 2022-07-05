@@ -17,9 +17,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
 
 <!-- Scripts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="static/js/lounge_api.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <script src="static/js/jquery.min.js"></script>
 <script src="static/js/browser.min.js"></script>
 <script src="static/js/breakpoints.min.js"></script>
@@ -29,10 +28,8 @@
 <!--  loading  -->
 <script>
     $(document).ready(function () {
-        load_lounge();
-        //$('#portraits-box').empty();
-        // $('#comments-box').empty();
-    });
+        load_lounge()}
+    );
 </script>
 
 
@@ -41,8 +38,8 @@
     <!-- Header -->
     <div id="header">
         <span id="house-logo" class="logo"></span>
-        <h1><span id="house-name">{{dormitory}}</span> House</h1>
-        <p id="house-desc">{{desc}}</p>
+        <h1><span id="house-name"></span> House</h1>
+        <p id="house-desc"></p>
 
     </div>
 
@@ -56,7 +53,7 @@
         </header>
 
         <div id="portraits-box" class="box container flex">
-
+            <!-- 초상화 출력 -->
         </div>
 
 
@@ -91,32 +88,8 @@
                                 <th>Date</th>
                             </tr>
                         </thead>
-                        <div id="edit-input" style="display: none;">
-                            <div class="col-12 edit">
-                                <input class="text" type="text" id="edit-comment" value="" />
-                                <input type="button" value="edit" />
-                            </div>
-                        </div>
                         <tbody id="comments-box">
-
-                            <!-- <tr>
-                                <td><img class="name-icon" src="images/gr.png"></td>
-                                <td>xptmxj23</td>
-                                <td>우리 기숙사가 짱이라는 말 어쩌구 저쩌구
-                                    <span class="edit-icon">
-                                        <i class="bi bi-wrench-adjustable-circle"></i> 
-                                        <i class="bi bi-x-circle"></i>
-                                    </span>
-                                    </td>
-                                <td>22.07.01</td>
-                            </tr>
-                            <tr>
-                                <td><img class="name-icon" src="images/gr.png"></td>
-                                <td>xptmxj23</td>
-                                <td>우리 기숙사가 짱이라는 말 어쩌구 저쩌구</td>
-                                <td>22.07.01</td>
-                            </tr> -->
-
+                            <!-- 방명록 출력 -->
                         </tbody>
                     </table>
                 </div>
@@ -155,45 +128,7 @@
         </ul>
     </div>
 
-    <script type="text/javascript">
-        new Chart(document.getElementById("pie-chart-students"), {
-            type: 'pie',
-            data: {
-                labels: ['Gryffindor', 'Hufflepuff', 'Slytherin', 'Ravenclaw'],
-                datasets: [{
-                    label: "학생수 (명)",
-                    backgroundColor: ["#c45850", "#8e5ea2", "#3cba9f", "#e8c3b9"],
-                    data: [23, 14, 17, 28],
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: '기숙사 배치 현황'
-                }
-            },
-        });
-    </script>
-    <script type="text/javascript">
-        new Chart(document.getElementById("pie-chart-board"), {
-            type: 'bar',
-            data: {
-                labels: ['Gryffindor', 'Hufflepuff', 'Slytherin', 'Ravenclaw'],
-                datasets: [{
-                    label: "게시글 수 (개)",
-                    backgroundColor: ["#c45850", "#8e5ea2", "#3cba9f", "#e8c3b9"],
-                    data: [39, 43, 37, 49],
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: '가장 말이 많은 기숙사!'
-                }
-            },
-        });
-    </script>
-
+<script src="static/js/lounge_api.js"></script>
 </body>
 
 </html>
