@@ -1,9 +1,11 @@
 body {
   height: 100vh;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn.pixabay.com/photo/2016/09/05/21/23/kings-cross-1647741_960_720.jpg);
+  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn.pixabay.com/photo/2016/09/05/21/23/kings-cross-1647741_960_720.jpg); */
+  /* background: url(../../images/background1.jpg); */
   background-size: cover;
-  color: #6a6f8c;
+  color: #2847ff;
   font: 600 16px/18px 'Open Sans', sans-serif;
+  overflow-y: hidden;
 }
 
 *,
@@ -32,17 +34,20 @@ a {
   width: 400px;
   height: 500px;
   margin: auto;
-  top: 15%;
+  top: 20%;
   position: relative;
+  border-radius: 12px;
   box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
   background-size: cover;
 }
 
 .login-html {
   width: 400px;
-  height: 500px;
-  padding: 90px 70px 50px 70px;
-  background: rgba(40, 57, 101, .9);
+  height: 510px;
+  padding: 70px 70px 50px 70px;
+  border-radius: 12px;
+  background: rgba(161, 159, 161, 0.137);
+  backdrop-filter: blur(10px);
 }
 
 .login-html .sign-in-htm,
@@ -95,6 +100,8 @@ a {
   margin-bottom: 15px;
 }
 
+.input::placeholder {color:rgb(46, 34, 34);}
+
 .login-form .group .label,
 .login-form .group .input,
 .login-form .group .button {
@@ -108,7 +115,7 @@ a {
   border: none;
   padding: 15px 20px;
   border-radius: 25px;
-  background: rgba(255, 255, 255, .1);
+  background: rgba(255, 255, 255, 0.26);
 }
 
 .login-form .group input[data-type="password"] {
@@ -117,7 +124,7 @@ a {
 }
 
 .login-form .group .label {
-  color: #aaa;
+  color: #ffffff;
   font-size: 12px;
 }
 
@@ -131,7 +138,7 @@ a {
   border-radius: 2px;
   position: relative;
   display: inline-block;
-  background: rgba(255, 255, 255, .1);
+  background: rgba(255, 255, 255, 0.678)
 }
 
 .login-form .group label .icon:before,
@@ -189,4 +196,89 @@ a {
 
 .foot-lnk {
   text-align: center;
+}
+
+.group label {
+  margin-bottom: 10px;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
+.margin-top-40 {
+  margin-top: 40px;
+}
+
+.button {
+  cursor: pointer;
+}
+
+
+/*  modal popup ad  */
+.modal {
+  position: absolute;
+  width: 510px;
+  height: 300px;
+  border-radius: 5px;
+  padding-top: 30px;
+}
+
+.modal-close {
+  position: absolute;
+  color: white;
+  text-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+  font-weight: bold;
+  top: 3%;
+  left: 96%;
+  cursor: pointer;
+}
+
+.modal-content {
+  background-size: cover;
+  box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+}
+
+.popup1 {
+  top: 5%;
+  left: 5%;
+}
+
+.popup2 {
+  top: 25%;
+  left: 11%;
+}
+
+.popup3 {
+  top: 30%;
+  left: 63%;
+}
+
+.popup4 {
+  top: 53%;
+  left: 70%;
+}
+
+.pop-image1 {
+  background-image: url(../../images/pop-image1.png);
+  width: 480px;
+  height: 269px;
+}
+
+.pop-image2 {
+  background-image: url(../../images/pop-image2.png);
+  width: 480px;
+  height: 269px;
+}
+
+.pop-image3 {
+  background-image: url(../../images/pop-image3.png);
+  width: 480px;
+  height: 280px;
+}
+
+.pop-image4 {
+  background-image: url(../../images/pop-image4.png);
+  width: 480px;
+  height: 259px;
 }

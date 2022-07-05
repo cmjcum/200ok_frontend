@@ -93,3 +93,35 @@ function save() {
         },
     });
 }
+
+
+// random background
+function random_background() {
+    var images = ['background1.jpg', 'background2.jpg', 'background3.jpg'];
+    $('body').css({'background-image': 'url(images/' + images[Math.floor(Math.random() * images.length)] + ')'});
+}
+
+
+// modal open
+function modal_default() {
+    $('#popup1').hide()
+    $('#popup2').hide()
+    $('#popup3').hide()
+    $('#popup4').hide()
+}
+
+function open1() { $('#popup1').show() }
+function open2() { $('#popup2').show() }
+function open3() { $('#popup3').show() }
+function open4() { $('#popup4').show() }
+
+function modal_open() {
+    setTimeout(open1, 1000)
+    setTimeout(open2, 1200)
+    setTimeout(open3, 1400)
+    setTimeout(open4, 1600)
+}
+
+function modalOff(obj) {
+    $(obj).parent().hide()
+}
