@@ -111,7 +111,7 @@ element.addEventListener("click", function(e) {
 
 
 function go_lounge() {
-    window.location.href = "../lounge/lounge.html";
+    window.location.replace(`${backend_base_url}/lounge/lounge.html`);
 }
 
 
