@@ -1,5 +1,6 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic,600,600italic,700,700italic");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
 
 /*
 	Directive by HTML5 UP
@@ -112,6 +113,18 @@ input, select, textarea {
 	height: 400px;
 	overflow: scroll;
 }
+
+.edit-icon {
+	margin-left: 15px;
+}
+
+.flex {
+	display: flex;
+	justify-content: space-around;
+	align-items: flex-start;
+	flex-wrap: wrap;
+}
+
 
 /* Chart */
 .canvas-container {
@@ -2035,7 +2048,7 @@ input, select, textarea {
 		}
 
 			header.major:before, header.major:after {
-				background: rgba(224, 224, 224, 0.75);
+				background: rgba(0, 0, 0, 0.95);
 				content: '';
 				display: block;
 				height: 1px;
