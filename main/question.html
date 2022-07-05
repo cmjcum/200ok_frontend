@@ -20,6 +20,7 @@
         $(document).ready(function() {
             load_question_page() 
             $('#second').hide()
+            $('.loader-wrap').hide()
         });
     </script>
     
@@ -74,6 +75,12 @@
             <button id="submit_btn" class="btn" onClick="click_submit_btn()">⭐ 제출 ⭐</button>
 
         </div>
+    </div>
+
+    <div class="loader-wrap">
+        <div class="loader">
+        </div>
+        <div class="loader-text">잠시만 기다려주세요</div>
     </div>
 
 </body>

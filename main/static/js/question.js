@@ -77,12 +77,16 @@ function click_submit_btn() {
 
         let rand = Math.floor(Math.random()*max_answers.length);
         let domr_id = max_answers[rand] + 1;
+        $('.loader-wrap').show();
+        $('#second').hide();
         post_dorm_and_birthday(domr_id)
         // console.log(max_answers[rand] + 1);
         return
     }
 
     let dorm_id = counting_answers.indexOf(max) + 1;
+    $('.loader-wrap').show();
+    $('#second').hide();
     post_dorm_and_birthday(dorm_id);
 
     // console.log(counting_answers.indexOf(max) + 1)
@@ -106,10 +110,13 @@ async function post_dorm_and_birthday(domr_id) {
     }
     ).then(response => {
         if (response.status == 200) {
+            $('.loader-wrap').hide();
             alert('success')
         }
         if (response.status == 400) {
+            $('.loader-wrap').hide();
             alert(response.status)
         }
     });
 }
+
