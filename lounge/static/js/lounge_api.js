@@ -1,5 +1,5 @@
 // url matching
-const backend_base_url = "http://127.0.0.1:8000"
+const backend_base_url = "http://15.164.217.105"
 const frontend_base_url = "http://127.0.0.1:5500"
 
 
@@ -122,7 +122,6 @@ async function load_lounge() {
     })
 }
 
-
 // method POST
 async function post_comment() {
   console.log("post comment in lounge")
@@ -182,4 +181,34 @@ async function delete_comment(comment_id) {
 //     } else {
 //         alert("등록 실패!")
 //     }
+
 // }
+
+// method DELETE
+async function delete_comment(comment_id) {
+  console.log("del comment in llounge")
+
+  const response = await fetch(`${backend_base_url}/lounge/delete/${comment_id}/`, {
+    method: 'DELETE',
+    headers: { Authorization: "Bearer " + localStorage.getItem("access"), }
+  })
+
+  alert("삭제 완료!")
+  location.reload();
+
+}
+
+
+// function openClose() {
+//   if ($('#edit-input').css('display') == 'block') {
+//     $('#edit-input').hide();
+//   } else {
+//     $('#edit-input').show();
+//   }
+// }
+
+
+// const BagOpen = document.getElementById("bag_open")
+// fetch("https://baconipsum.com/api/?type=all-meat&paras=200&format=html")
+//     .then(response => response.text())
+//     .then(result => BagOpen.innerHTML = result)
