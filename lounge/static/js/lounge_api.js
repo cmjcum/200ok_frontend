@@ -90,6 +90,43 @@ async function load_lounge() {
         }
       }
 
+      new Chart(document.getElementById("pie-chart-students"), {
+        type: 'pie',
+        data: {
+            labels: ['Gryffindor', 'Hufflepuff', 'Slytherin', 'Ravenclaw'],
+            datasets: [{
+                label: "학생수 (명)",
+                backgroundColor: ["#c45850", "#8e5ea2", "#3cba9f", "#e8c3b9"],
+                data: data.users_count,
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: '기숙사 배치 현황'
+            }
+        },
+      });
+
+
+      new Chart(document.getElementById("pie-chart-board"), {
+        type: 'bar',
+        data: {
+            labels: ['Gryffindor', 'Hufflepuff', 'Slytherin', 'Ravenclaw'],
+            datasets: [{
+                label: "게시글 수 (개)",
+                backgroundColor: ["#c45850", "#8e5ea2", "#3cba9f", "#e8c3b9"],
+                data: data.comments_count,
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: '가장 말이 많은 기숙사!'
+            }
+        },
+      });
+
     })
 }
 
@@ -156,3 +193,4 @@ async function delete_comment(comment_id) {
   location.reload();
 
 }
+

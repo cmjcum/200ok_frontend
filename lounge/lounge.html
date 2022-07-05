@@ -19,7 +19,6 @@
 <!-- Scripts -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-<script src="static/js/lounge_api.js"></script>
 <script src="static/js/jquery.min.js"></script>
 <script src="static/js/browser.min.js"></script>
 <script src="static/js/breakpoints.min.js"></script>
@@ -148,46 +147,7 @@
         </ul>
     </div>
 
-    <script type="text/javascript">
-
-        new Chart(document.getElementById("pie-chart-students"), {
-            type: 'pie',
-            data: {
-                labels: ['Gryffindor', 'Hufflepuff', 'Slytherin', 'Ravenclaw'],
-                datasets: [{
-                    label: "학생수 (명)",
-                    backgroundColor: ["#c45850", "#8e5ea2", "#3cba9f", "#e8c3b9"],
-                    data: [4,5,6,8],
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: '기숙사 배치 현황'
-                }
-            },
-        });
-    </script>
-    <script type="text/javascript">
-        new Chart(document.getElementById("pie-chart-board"), {
-            type: 'bar',
-            data: {
-                labels: ['Gryffindor', 'Hufflepuff', 'Slytherin', 'Ravenclaw'],
-                datasets: [{
-                    label: "게시글 수 (개)",
-                    backgroundColor: ["#c45850", "#8e5ea2", "#3cba9f", "#e8c3b9"],
-                    data: [10,7,8,9],
-                }]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: '가장 말이 많은 기숙사!'
-                }
-            },
-        });
-    </script>
-
+<script src="static/js/lounge_api.js"></script>
 </body>
 
 </html>
