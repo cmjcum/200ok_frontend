@@ -114,7 +114,7 @@ async function post_dorm_and_birthday(domr_id) {
     ).then(response => {
         if (response.status == 200) {
             $('.loader-wrap').hide();
-            alert('success')
+            window.location.replace(`${backend_base_url}/dormitory/dormitory.html`)
         }
         if (response.status == 400) {
             $('.loader-wrap').hide();
