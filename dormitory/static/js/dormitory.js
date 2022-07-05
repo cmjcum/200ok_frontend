@@ -126,5 +126,5 @@ function clipboard_share() {
 
 // page move
 function go_room() {
-    window.location.replace(`${backend_base_url}/lounge/lounge.html`);
+    window.location.replace(`${backend_base_url}/dormitory/myroom.html`);
 }
