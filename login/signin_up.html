@@ -7,18 +7,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="static/css/signin_up.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
     <script src="static/js/signin_up.js"></script>
 </head>
+
+<!--  loading  -->
+<script>
+    $(document).ready(function() {
+        random_background()
+        modal_default()
+        modal_open()
+    });
+</script>
 
 <body>
     <div class="login-wrap">
         <div class="login-html border_solid">
-            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">aSign
+            <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign
                 In</label>
             <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
             <div class="login-form">
+
                 <!-- 로그인 -->
-                <div class="sign-in-htm">
+                <div class="sign-in-htm margin-top-20">
                     <div class="group">
                         <label for="user" class="label">Username</label>
                         <input type="text" class="input" id="floatingInputSignIn" placeholder="username">
@@ -29,14 +43,13 @@
                             placeholder="Password">
                     </div>
                     <div class="group">
-                        <input type="submit" class="button" value="Sign In" onclick="handleSignin()">
+                        <input type="submit" id="login" class="button margin-top-40" value="Sign In" onclick="handleSignin(), login()">
                     </div>
-                    <!-- 로그아웃 -->
-                    <button type="button" onclick="logout()">임시 Log out</button>
-                    <!--  -->
                 </div>
+
+
                 <!-- 회원가입 -->
-                <div class="sign-up-htm">
+                <div class="sign-up-htm margin-top-20">
                     <div class="group">
                         <label for="user" class="label">Fullname</label>
                         <input type="text" class="input" id="floatingInputFullname" placeholder="Fullname">
@@ -51,12 +64,34 @@
                             placeholder="Password">
                     </div>
                     <div class="group">
-                        <input type="submit" class="button" value="Sign Up" onclick="handleSignup()">
+                        <input type="submit" class="button margin-top-20" value="Sign Up" onclick="handleSignup()">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- popup ad modal   -->
+    <div id=popup1 class="modal popup1">
+        <div class="modal-close" onclick="modalOff(this)">X</div>
+        <div class="modal-content pop-image1"></div>
+    </div>
+
+    <div id=popup2 class="modal popup2">
+        <div class="modal-close" onclick="modalOff(this)">X</div>
+        <div class="modal-content pop-image2"></div>
+    </div>
+
+    <div id=popup3 class="modal popup3">
+        <div class="modal-close" onclick="modalOff(this)">X</div>
+        <div class="modal-content pop-image3"></div>
+    </div>
+
+    <div id=popup4 class="modal popup4">
+        <div class="modal-close" onclick="modalOff(this)">X</div>
+        <div class="modal-content pop-image4"></div>
+    </div>
+
 </body>
 
 </html>
