@@ -5,8 +5,8 @@ const frontend_base_url = "http://127.0.0.1:5500"
 async function load_question_page() {
     const response = await fetch(`${backend_base_url}/dorm/question/`, {
         method: 'GET',
-        // headers : { Authorization : "Bearer " + localStorage.getItem("access")},
-        // withCredentials: true,  
+        headers : { Authorization : "Bearer " + localStorage.getItem("access")},
+        withCredentials: true,  
     })
     .then(response => response.json())
     .then(data => {
