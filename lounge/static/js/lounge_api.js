@@ -1,5 +1,5 @@
 // url matching
-const backend_base_url = "http://127.0.0.1:8000"
+const backend_base_url = "http://15.164.217.105"
 const frontend_base_url = "http://127.0.0.1:5500"
 
 
@@ -84,7 +84,7 @@ async function load_lounge() {
       }
 
     })
-  }
+}
 
 // method POST
 async function post_comment() {
@@ -135,15 +135,15 @@ async function post_comment() {
 
 // method DELETE
 async function delete_comment(comment_id) {
-    console.log("del comment in llounge")
+  console.log("del comment in llounge")
 
-    const response = await fetch(`${backend_base_url}/lounge/delete/${comment_id}/`, {
-        method: 'DELETE',
-        headers: {Authorization: "Bearer " + localStorage.getItem("access"),}
-    })
+  const response = await fetch(`${backend_base_url}/lounge/delete/${comment_id}/`, {
+    method: 'DELETE',
+    headers: { Authorization: "Bearer " + localStorage.getItem("access"), }
+  })
 
-    alert("삭제 완료!")
-    location.reload();
+  alert("삭제 완료!")
+  location.reload();
 
 }
 

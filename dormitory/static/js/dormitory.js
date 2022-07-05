@@ -1,5 +1,5 @@
 // url matching
-const backend_base_url = "http://127.0.0.1:8000"
+const backend_base_url = "http://15.164.217.105"
 const frontend_base_url = "http://127.0.0.1:5500"
 
 
@@ -9,40 +9,40 @@ async function change_mydormitory() {
 
     const response = await fetch(`${backend_base_url}/dorm/sorting/`, {
         method: 'GET',
-        headers : { Authorization : "Bearer " + localStorage.getItem("access")},
+        headers: { Authorization: "Bearer " + localStorage.getItem("access") },
         withCredentials: true,
     })
-    .then(response => response.json())
-    .then(data => {      
-        dormitory = ["gd", "hf", "sth", "rc"]
-        let room_id = data.dormitory_id - 1
-        
-        console.log(data)
-        // dorm element
-        document.getElementById("mybg").classList.toggle(`${dormitory[room_id]}-bg`)
-        document.getElementById("mydormlogo").classList.toggle(`${dormitory[room_id]}-logo`)
-        document.getElementById("mydorm1").innerText = `${data.dormitory}`
-        document.getElementById("mydorm2").innerText= `${data.dormitory}`
-        document.getElementById("myic").classList.toggle(`${dormitory[room_id]}-id-card`)
-        document.getElementById("myic2").classList.toggle(`${dormitory[room_id]}-id-card2`)
-        document.getElementById("myiclogo").classList.toggle(`${dormitory[room_id]}-logo`)
+        .then(response => response.json())
+        .then(data => {
+            dormitory = ["gd", "hf", "sth", "rc"]
+            let room_id = data.dormitory_id - 1
 
-        // student id card
-        admission = getYmd10(data.join_date)
-        student_id = admission.slice(2, 4) + String(data.dormitory_id).padStart(2,'0') + String(data.id).padStart(4,'0')
+            console.log(data)
+            // dorm element
+            document.getElementById("mybg").classList.toggle(`${dormitory[room_id]}-bg`)
+            document.getElementById("mydormlogo").classList.toggle(`${dormitory[room_id]}-logo`)
+            document.getElementById("mydorm1").innerText = `${data.dormitory}`
+            document.getElementById("mydorm2").innerText = `${data.dormitory}`
+            document.getElementById("myic").classList.toggle(`${dormitory[room_id]}-id-card`)
+            document.getElementById("myic2").classList.toggle(`${dormitory[room_id]}-id-card2`)
+            document.getElementById("myiclogo").classList.toggle(`${dormitory[room_id]}-logo`)
 
-        document.getElementById("myname").innerText= `${data.fullname}`
-        document.getElementById("name").innerText= `${data.fullname}`
-        document.getElementById("birthday").innerText= `${data.birthday}`
-        document.getElementById("student_id").innerText= `${student_id}`
-        document.getElementById("admission").innerText= `${admission}`
-        // document.querySelector(".portrait").attr('style', 'background-image: url("' + image_url +'")')
-    })
+            // student id card
+            admission = getYmd10(data.join_date)
+            student_id = admission.slice(2, 4) + String(data.dormitory_id).padStart(2, '0') + String(data.id).padStart(4, '0')
+
+            document.getElementById("myname").innerText = `${data.fullname}`
+            document.getElementById("name").innerText = `${data.fullname}`
+            document.getElementById("birthday").innerText = `${data.birthday}`
+            document.getElementById("student_id").innerText = `${student_id}`
+            document.getElementById("admission").innerText = `${admission}`
+            // document.querySelector(".portrait").attr('style', 'background-image: url("' + image_url +'")')
+        })
 }
 
 
 //yyyy-mm-dd format
-function getYmd10() {    
+function getYmd10() {
     var d = new Date();
     return d.getFullYear() + "-" + ((d.getMonth() + 1) > 9 ? (d.getMonth() + 1).toString() : "0" + (d.getMonth() + 1)) + "-" + (d.getDate() > 9 ? d.getDate().toString() : "0" + d.getDate().toString());
 }
@@ -51,7 +51,8 @@ function getYmd10() {
 // SNS share
 function share_facebook() {
     var sendUrl = "devpad.tistory.com/"; // 전달할 URL
-    window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);}
+    window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
+}
 
 
 function share_kakao() {
@@ -68,8 +69,8 @@ function share_kakao() {
             description: "[당일입학] 당신도 호그와트에 입학할 수 있다!", // 보여질 설명
             imageUrl: "devpad.tistory.com/", // 콘텐츠 URL
             link: {
-        mobileWebUrl: "devpad.tistory.com/",
-        webUrl: "devpad.tistory.com/"
+                mobileWebUrl: "devpad.tistory.com/",
+                webUrl: "devpad.tistory.com/"
             }
         }
     });
@@ -108,10 +109,10 @@ function clipboard_share() {
 
 // save image
 function save_image() {
-        html2canvas($("#student-id"), {
-            onrendered: function (canvas) {
-                canvas.toBlob(function (blob) {
-                    saveAs(blob, 'myidcard.png')
+    html2canvas($("#student-id"), {
+        onrendered: function (canvas) {
+            canvas.toBlob(function (blob) {
+                saveAs(blob, 'myidcard.png')
             })
         }
     })

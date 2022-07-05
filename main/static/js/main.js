@@ -1,4 +1,4 @@
-const backend_base_url = "http://127.0.0.1:8000"
+const backend_base_url = "http://15.164.217.105"
 const frontend_base_url = "http://127.0.0.1:5500"
 
 
@@ -11,7 +11,7 @@ async function select_picture() {
     form_data.append("pic", pic);
 
     const response = await fetch(`${backend_base_url}/user/main/`, {
-        headers: {Authorization : "Bearer " + localStorage.getItem("access")},
+        headers: { Authorization: "Bearer " + localStorage.getItem("access") },
         withCredentials: true,
         method: 'POST',
         body: form_data
