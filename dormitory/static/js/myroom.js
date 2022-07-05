@@ -1,6 +1,7 @@
 // url matching
-const backend_base_url = "http://15.164.217.105"
+const backend_base_url = "http://127.0.0.1:8000"
 const frontend_base_url = "http://127.0.0.1:5500"
+
 
 // get data - my room
 async function change_myroom() {
@@ -111,7 +112,7 @@ element.addEventListener("click", function (e) {
 
 
 function go_lounge() {
-    window.location.replace(`${backend_base_url}/lounge/lounge.html`);
+    window.location.replace(`${frontend_base_url}/lounge/lounge.html`);
 }
 
 
