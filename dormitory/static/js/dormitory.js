@@ -56,6 +56,28 @@ function share_facebook() {
     window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);}
 
 
+function share_kakao() {
+
+    // 사용할 앱의 JavaScript 키 설정
+    Kakao.init('8adc2cfed61d408c49b6df7068aef576');
+
+    // 카카오링크 버튼 생성
+    Kakao.Link.createDefaultButton({
+        container: '#btn_Kakao', // 카카오공유버튼ID
+        objectType: 'feed',
+        content: {
+            title: "200ok", // 보여질 제목
+            description: "[당일입학] 당신도 호그와트에 입학할 수 있다!", // 보여질 설명
+            imageUrl: "devpad.tistory.com/", // 콘텐츠 URL
+            link: {
+        mobileWebUrl: "devpad.tistory.com/",
+        webUrl: "devpad.tistory.com/"
+            }
+        }
+    });
+}
+
+
 function clipboard_share() {
     // 1. 새로운 element 생성
     var tmpTextarea = document.createElement('textarea');
