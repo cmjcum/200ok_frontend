@@ -29,9 +29,7 @@ async function change_mydormitory() {
 
         // student id card
         admission = getYmd10(data.join_date)
-        console.log(admission)
         student_id = admission.slice(2, 4) + String(data.dormitory_id).padStart(2,'0') + String(data.id).padStart(4,'0')
-        console.log(student_id)
 
         document.getElementById("myname").innerText= `${data.fullname}`
         document.getElementById("name").innerText= `${data.fullname}`
@@ -120,7 +118,6 @@ function save_image() {
 }
 
 
-// const BagOpen = document.getElementById("bag_open")
-// fetch("https://baconipsum.com/api/?type=all-meat&paras=200&format=html")
-//     .then(response => response.text())
-//     .then(result => BagOpen.innerHTML = result)
+function go_room() {
+    window.location.href = "myroom.html";
+}

@@ -30,12 +30,7 @@
     <title>200ok</title>
 </head>
 
-<!--  loading  -->
-<script>
-    $(document).ready(function() {
-        change_mydormitory() 
-    });
-</script>
+
 
 <!-- BG -->
 <body id="mybg" class="bg">
@@ -62,7 +57,7 @@
                 <p>Share your house and student ID card</p>
             </div>
             <div>
-                <button class="btn go-room-btn btn-font">LOOK AROUND YOUR ROOM</button>
+                <button class="btn go-room-btn btn-font" onclick="go_room()">LOOK AROUND YOUR ROOM</button>
             </div>
             <div class="share_fix">
                 <div class="share">
@@ -109,6 +104,7 @@
         <a name="next"></a>
     </div>
 </div>
+
 <!-- JS -->
 <script src="https://cdn.rawgit.com/eligrey/FileSaver.js/5ed507ef8aa53d8ecfea96d96bc7214cd2476fd2/FileSaver.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.js"></script>
@@ -119,5 +115,11 @@
         crossorigin="anonymous"></script>
 <script type="text/javascript" src="static/js/dormitory.js" defer></script>
 
+<!--  loading  -->
+<script>
+    $(document).ready(function() {
+        change_mydormitory() 
+    });
+</script>
 </body>
 </html>

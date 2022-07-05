@@ -108,3 +108,15 @@ element.addEventListener("click", function(e) {
   // -> and re-adding the class
     element.classList.add("bag_ani");
 }, false);
+
+
+function go_lounge() {
+    window.location.href = "../lounge/lounge.html";
+}
+
+
+function logout() {
+    window.localStorage.clear();
+    window.location.replace(`${frontend_base_url}/login/signin_up.html`);
+    alert('logout success')
+}
