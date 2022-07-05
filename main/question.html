@@ -19,6 +19,7 @@
     <script>
         $(document).ready(function() {
             load_question_page() 
+            $('#second').hide()
         });
     </script>
     
@@ -31,12 +32,48 @@
     <div class="wrap">
 
         <div class="test-title"></div>
+        
+        <div id="first" class="hidable-div">
+            <div id="questions" class="questions">
 
-        <div id="questions" class="questions">
+            </div>
+    
+            <button id="next_btn" class="btn" onClick="click_next_btn()">⭐ 다음 ⭐</button>
+        </div>
+        
+        <div id="second" class="hidable-div">
+            <div>
+                <p>Birthday</p>
+                <input type="text" id="birthday" class="birthday" placeholder="YYYY-MM-DD">
+            </div>
+
+            <div id="question_dorm" class="question">
+                <div class="q-title">가장 가고싶은 기숙사는?</div>
+                <div class="answer">
+                    <label>
+                        <input type="radio" name="question_dorm" value="1">그리핀도르
+                    </label>
+                </div>
+                <div class="answer">
+                    <label>
+                        <input type="radio" name="question_dorm" value="2">후플푸프
+                    </label>
+                </div>
+                <div class="answer">
+                    <label>
+                        <input type="radio" name="question_dorm" value="3">슬리데린
+                    </label>
+                </div>
+                <div class="answer">
+                    <label>
+                        <input type="radio" name="question_dorm" value="4">레번클로
+                    </label>
+                </div>
+            </div>
+
+            <button id="submit_btn" class="btn" onClick="click_submit_btn()">⭐ 제출 ⭐</button>
 
         </div>
-
-        <button class="btn">⭐ 다음 ⭐</button>
     </div>
 
 </body>
