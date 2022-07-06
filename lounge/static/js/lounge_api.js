@@ -116,7 +116,15 @@ async function load_lounge() {
             title: {
                 display: true,
                 text: '가장 말이 많은 기숙사!'
-            }
+            },
+            scales: {
+              yAxes: [{
+                  ticks: {                      
+                      min: 0,
+                      stepSize: 1
+                  }
+              }]
+          }
         },
       });
 
