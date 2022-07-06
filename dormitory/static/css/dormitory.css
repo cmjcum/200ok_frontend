@@ -299,12 +299,14 @@ li {
 }
 
 .portrait {
-    background-image: url("../../images/luna.jpg");
-    background-size: cover;
-    background-position: center;
     width: 130px;
     height: 170px;
     margin: 40% 25% 1% 25%;
+}
+
+.portrait-size {
+    width: 130px;
+    height: 170px;
 }
 
 .student-name {

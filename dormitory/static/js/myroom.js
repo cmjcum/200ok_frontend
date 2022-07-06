@@ -38,6 +38,8 @@ async function change_myroom() {
             document.getElementById("birthday").innerText = `${data.birthday}`
             document.getElementById("student_id").innerText = `${student_id}`
             document.getElementById("admission").innerText = `${admission}`
+            document.getElementById("portrait").src = `${data.portrait}`
+
             // document.querySelector(".portrait").attr('style', 'background-image: url("' + image_url +'")')
         })
 }

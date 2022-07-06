@@ -31,12 +31,15 @@ async function change_mydormitory() {
             admission = getYmd10(data.join_date)
             student_id = admission.slice(2, 4) + String(data.dormitory_id).padStart(2, '0') + String(data.id).padStart(4, '0')
 
+            console.log(data.portrait)
             document.getElementById("myname").innerText = `${data.fullname}`
             document.getElementById("name").innerText = `${data.fullname}`
             document.getElementById("birthday").innerText = `${data.birthday}`
             document.getElementById("student_id").innerText = `${student_id}`
             document.getElementById("admission").innerText = `${admission}`
-            // document.querySelector(".portrait").attr('style', 'background-image: url("' + image_url +'")')
+            document.getElementById("portrait").src = `${data.portrait}`
+
+            // document.querySelector(".portrait").attr('style', 'background-image: url("' + `${data.portrait}` + '")')
         })
 }
 
