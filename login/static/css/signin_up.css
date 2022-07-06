@@ -1,7 +1,5 @@
 body {
   height: 100vh;
-  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(https://cdn.pixabay.com/photo/2016/09/05/21/23/kings-cross-1647741_960_720.jpg); */
-  /* background: url(../../images/background1.jpg); */
   background-size: cover;
   color: #2847ff;
   font: 600 16px/18px 'Open Sans', sans-serif;

@@ -5,7 +5,6 @@ const frontend_base_url = "http://127.0.0.1:5500"
 
 // get data - my room
 async function change_myroom() {
-    console.log("change myroom")
 
     const response = await fetch(`${backend_base_url}/dorm/myroom/`, {
         method: 'GET',
@@ -16,8 +15,6 @@ async function change_myroom() {
         .then(data => {
             dormitory = ["gd", "hf", "sth", "rc"]
             let room_id = data.dormitory_id - 1
-
-            console.log(data)
 
             document.getElementById("mybg").classList.toggle(`${dormitory[room_id]}-bg`)
             document.getElementById("myroom").classList.toggle(`${dormitory[room_id]}-room`)
@@ -32,15 +29,13 @@ async function change_myroom() {
             admission = getYmd10(data.join_date)
             student_id = admission.slice(2, 4) + String(data.dormitory_id).padStart(2, '0') + String(data.id).padStart(4, '0')
             image_url = `${data.portrait}`
-            console.log(image_url)
+            
             document.getElementById("myname").innerText = `${data.fullname}`
             document.getElementById("name").innerText = `${data.fullname}`
             document.getElementById("birthday").innerText = `${data.birthday}`
             document.getElementById("student_id").innerText = `${student_id}`
             document.getElementById("admission").innerText = `${admission}`
             document.getElementById("portrait").src = `${data.portrait}`
-
-            // document.querySelector(".portrait").attr('style', 'background-image: url("' + image_url +'")')
         })
 }
 
@@ -101,14 +96,9 @@ element = document.getElementById("mybag");
 element.addEventListener("click", function (e) {
     e.preventDefault;
 
-    // -> removing the class
     element.classList.remove("bag_ani");
-
-    // -> triggering reflow /* The actual magic */
-    // without this it wouldn't work. Try uncommenting the line and the transition won't be retriggered.
     element.offsetWidth = element.offsetWidth;
 
-    // -> and re-adding the class
     element.classList.add("bag_ani");
 }, false);
 

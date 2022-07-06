@@ -5,7 +5,6 @@ const frontend_base_url = "http://127.0.0.1:5500"
 
 // get data - sorting dormitory
 async function change_mydormitory() {
-    console.log("change mydormitory")
 
     const response = await fetch(`${backend_base_url}/dorm/sorting/`, {
         method: 'GET',
@@ -17,7 +16,6 @@ async function change_mydormitory() {
             dormitory = ["gd", "hf", "sth", "rc"]
             let room_id = data.dormitory_id - 1
 
-            console.log(data)
             // dorm element
             document.getElementById("mybg").classList.toggle(`${dormitory[room_id]}-bg`)
             document.getElementById("mydormlogo").classList.toggle(`${dormitory[room_id]}-logo`)
@@ -31,15 +29,12 @@ async function change_mydormitory() {
             admission = getYmd10(data.join_date)
             student_id = admission.slice(2, 4) + String(data.dormitory_id).padStart(2, '0') + String(data.id).padStart(4, '0')
 
-            console.log(data.portrait)
             document.getElementById("myname").innerText = `${data.fullname}`
             document.getElementById("name").innerText = `${data.fullname}`
             document.getElementById("birthday").innerText = `${data.birthday}`
             document.getElementById("student_id").innerText = `${student_id}`
             document.getElementById("admission").innerText = `${admission}`
             document.getElementById("portrait").src = `${data.portrait}`
-
-            // document.querySelector(".portrait").attr('style', 'background-image: url("' + `${data.portrait}` + '")')
         })
 }
 
@@ -53,7 +48,7 @@ function getYmd10() {
 
 // SNS share
 function share_facebook() {
-    var sendUrl = "devpad.tistory.com/"; // 전달할 URL
+    var sendUrl = "devpad.tistory.com/";
     window.open("http://www.facebook.com/sharer/sharer.php?u=" + sendUrl);
 }
 
@@ -65,12 +60,12 @@ function share_kakao() {
 
     // 카카오링크 버튼 생성
     Kakao.Link.createDefaultButton({
-        container: '#btn_Kakao', // 카카오공유버튼ID
+        container: '#btn_Kakao',
         objectType: 'feed',
         content: {
-            title: "200ok", // 보여질 제목
-            description: "[당일입학] 당신도 호그와트에 입학할 수 있다!", // 보여질 설명
-            imageUrl: "devpad.tistory.com/", // 콘텐츠 URL
+            title: "200ok",
+            description: "[당일입학] 당신도 호그와트에 입학할 수 있다!",
+            imageUrl: "devpad.tistory.com/",
             link: {
                 mobileWebUrl: "devpad.tistory.com/",
                 webUrl: "devpad.tistory.com/"
@@ -81,51 +76,27 @@ function share_kakao() {
 
 
 function clipboard_share() {
-    // 1. 새로운 element 생성
     var tmpTextarea = document.createElement('textarea');
 
-    // 2. 해당 element에 복사하고자 하는 value 저장
     tmpTextarea.value = "http://127.0.0.1:5500/dormitory/dormitory.htm";
 
-    // 3. 해당 element를 화면에 안보이는 곳에 위치
     tmpTextarea.setAttribute('readonly', '');
     tmpTextarea.style.position = 'absolute';
     tmpTextarea.style.left = '-9999px';
     document.body.appendChild(tmpTextarea);
 
-    // 4. 해당 element의 value를 시스템 함수를 호출하여 복사
     tmpTextarea.select();
-    tmpTextarea.setSelectionRange(0, 9999);  // 셀렉트 범위 설정
+    tmpTextarea.setSelectionRange(0, 9999);
     var successChk = document.execCommand('copy');
 
-    // 5. 해당 element 삭제
     document.body.removeChild(tmpTextarea);
 
-    // 클립보드 성공여부 확인
     if (!successChk) {
         alert("클립보드 복사 실패");
     } else {
         alert("클립보드에 복사 완료");
     }
 }
-
-
-// save image
-// function save_image(div){
-// 	div = div[0]
-// 	html2canvas(div).then(function(canvas){
-// 		var myImage = canvas.toDataURL();
-// 		downloadURI(myImage, "myidcard.png") 
-// 	});
-// }
-
-// function downloadURI(uri, name){
-// 	var link = document.createElement("a")
-// 	link.download = name;
-// 	link.href = uri;
-// 	document.body.appendChild(link);
-// 	link.click();
-// }
 
 
 // page move

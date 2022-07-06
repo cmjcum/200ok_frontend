@@ -17,10 +17,10 @@ async function select_picture() {
         body: form_data
     }
     ).then(response => {
-        console.log(response)
         if (response.status == 200) {
             window.location.replace(`${frontend_base_url}/main/question.html`);
         }
+        
         if (response.status == 400) {
             alert(response.status)
         }
