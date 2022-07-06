@@ -129,6 +129,9 @@ input, select, textarea {
     box-shadow: inset 0px 0px 5px white;
 }
 
+.bi-x-circle {
+	cursor: pointer;
+}
 
 .edit-icon {
 	margin-left: 15px;

@@ -56,6 +56,7 @@ async function load_lounge() {
       for (var i = 0; i < board_len; i++) {
         author_id = data.board[i].author
         comment = data.board[i]
+        comment.icon = 'https://my-sparta.s3.ap-northeast-2.amazonaws.com/' + comment.icon.split('/')[2]
         if (user_id == author_id) {
           board_temp = `
 <tr>
